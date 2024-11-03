@@ -78,20 +78,28 @@ namespace ConsoleApp1
             //}
 
 
-            //задача 4. найти среднюю температуру воздуха за октябрь месяц.
+            //доп.задание: найти среднюю температуру воздуха за октябрь месяц.
 
             Random rand = new Random();
             double srtemp = 0;
             int sum = 0;
-            int[] omas = new int[31];
-            for (int i = 0; i < omas.Length; i++)
+            int[] october = new int[31];
+            for (int i = 0; i < october.Length; i++)
             {
                 int x = rand.Next(5, 25);
-                omas[i] = x;
+                october[i] = x;
                 sum += x;
             }
-            srtemp = sum / 31;
-            //dodelat'
+            srtemp = sum / 31.0;
+            int count = 1;
+            Console.WriteLine("Температура каждого дня в октябре:");
+            foreach (int day in october)
+            {
+            
+                Console.WriteLine($"День {count}: {day}°C");
+                count++;
+            }
+            Console.WriteLine($"Средняя температура за месяц: {srtemp:N1}°C");
             Console.ReadKey();
         }
     }
